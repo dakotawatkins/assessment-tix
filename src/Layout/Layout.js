@@ -12,19 +12,19 @@ function Layout() {
       <Header />
 
       <div>
-        <Route path="/" exact>
+        <Route path="/">
           <UsersList />
-
-          <Route path="/user/:userId" exact>
-            <User />
-          </Route>
-
-          <Route path="/" exact>
-            <AddUser />
-          </Route>
         </Route>
 
-        <Route path="/" exact>
+        <Route path="/user/:userId">
+          <User />
+        </Route>
+
+        <Route path="/">
+          <AddUser />
+        </Route>
+
+        <Route path="/">
           <EditUser />
         </Route>
       </div>
