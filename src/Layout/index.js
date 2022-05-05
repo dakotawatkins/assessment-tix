@@ -4,6 +4,7 @@ import Header from "./Header";
 import UsersList from "./sideComponent/UsersList";
 import User from "./users/User";
 import AddUser from "./users/AddUser";
+import EditUser from "./users/EditUser";
 
 function Layout() {
   return (
@@ -21,6 +22,10 @@ function Layout() {
 
         <Route path="/" exact>
           <AddUser />
+        </Route>
+
+        <Route path="/" exact>
+          <EditUser />
         </Route>
       </div>
     </div>

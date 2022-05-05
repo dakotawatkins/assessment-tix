@@ -11,7 +11,7 @@ function AddUser() {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Add User
+        Edit User
       </Button>
 
       <Modal show={show} onHide={handleClose} centered>
