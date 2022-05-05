@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import User from "../users/User";
+import User from "./User/User";
 import { listUsers } from "../../utils/api";
 
 function UserList() {
@@ -21,20 +21,7 @@ function UserList() {
 
   return (
     <div>
-      <h2>UserList</h2>
-      <div>
-        {list}
-        {/* {users.map((user) => {
-          return (
-            <p>
-              {user.firstName} {user.lastName}
-            </p>
-          );
-        })} */}
-        {/* {users.map((user) => {
-          <UserList key={user.id} user={user} />;
-        })} */}
-      </div>
+      <div>{list}</div>
     </div>
   );
 }

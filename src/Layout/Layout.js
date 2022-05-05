@@ -1,10 +1,10 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import Header from "./Header";
-import UsersList from "./sideComponent/UsersList";
-import User from "./users/User";
-import AddUser from "./users/AddUser";
-import EditUser from "./users/EditUser";
+import UsersList from "./Users/Users";
+import User from "./Users/User/User";
+import AddUser from "./Users/AddUser";
+import EditUser from "./Users/User/EditUser";
 
 function Layout() {
   return (
@@ -14,14 +14,14 @@ function Layout() {
       <div>
         <Route path="/" exact>
           <UsersList />
-        </Route>
 
-        {/* <Route path="/" exact>
-          <User />
-        </Route> */}
+          <Route path="/user/:userId" exact>
+            <User />
+          </Route>
 
-        <Route path="/" exact>
-          <AddUser />
+          <Route path="/" exact>
+            <AddUser />
+          </Route>
         </Route>
 
         <Route path="/" exact>
