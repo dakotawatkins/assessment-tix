@@ -29,7 +29,7 @@ async function fetchJson(url, options, onCancel) {
 }
 
 /////////////////////
-
+// Makes GET request for list of users.
 export async function listUsers(params, signal) {
   const url = "https://6180472f8bfae60017adfa54.mockapi.io/users";
 
@@ -42,6 +42,26 @@ export async function listUsers(params, signal) {
   return await fetchJson(url, { headers, signal, method: "GET" }, []);
 }
 
+// Makes POST request for specific user.
 export async function addUser(user, signal) {
   const url = "https://6180472f8bfae60017adfa54.mockapi.io/users";
+  const body = JSON.stringify({ data: user });
+  return await fetchJson(url, { headers, signal, method: "POST", body }, []);
+}
+
+// Makes a PUT request to update user.
+export async function updateUser(user, signal) {
+  const url = `https://6180472f8bfae60017adfa54.mockapi.io/users/${user.id}`;
+  const body = JSON.stringify({ data: user });
+  const options = {
+    method: "PUT",
+    headers,
+    body,
+  };
+  return await fetchJson(url, options, []);
+}
+
+export async function readUsers(userId, signal) {
+  const url = `https://6180472f8bfae60017adfa54.mockapi.io/users/${userId}`;
+  return await fetchJson(url, { signal }, {});
 }
